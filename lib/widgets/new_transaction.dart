@@ -31,7 +31,8 @@ class _NewTransactionState extends State<NewTransaction> {
       enteredAmount,
     );
 
-    Navigator.of(context).pop(); // To close modal sheet on entering submit on keyboard
+    Navigator.of(context)
+        .pop(); // To close modal sheet on entering submit on keyboard
   }
 
   @override
@@ -58,9 +59,25 @@ class _NewTransactionState extends State<NewTransaction> {
               onSubmitted: (_) => submitData(),
               // onChanged: (value) => amountInput = value,
             ),
-            TextButton(
+            Container(
+              height: 70,
+              child: Row(
+                children: [
+                  Text('No Date Chosen'),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Choose Date',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            ElevatedButton(
               child: Text('Add Transaction'),
-              style: TextButton.styleFrom(primary: Colors.purple),
+              style: TextButton.styleFrom(
+                  primary: Theme.of(context).textTheme.button.color),
               onPressed: submitData,
             )
           ],
