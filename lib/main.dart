@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         accentColor: Colors.amber,
+        // colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+        //     .copyWith(secondary: Colors.amber),
+        // colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.amber),
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: TextStyle(
