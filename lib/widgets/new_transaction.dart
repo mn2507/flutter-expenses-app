@@ -5,6 +5,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/widgets/adaptive_flat_button.dart';
 import 'package:intl/intl.dart';
 
 class NewTransaction extends StatefulWidget {
@@ -100,21 +101,10 @@ class _NewTransactionState extends State<NewTransaction> {
                             : 'Picked Date: ${DateFormat.yMd().format(_selectedDate)}',
                       ),
                     ),
-                    Platform.isIOS
-                        ? CupertinoButton(
-                            // color: Colors.blue, //To create elevated button in iOS
-                            child: Text(
-                              'Choose Date',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            onPressed: _presentDatePicker)
-                        : TextButton(
-                            onPressed: _presentDatePicker,
-                            child: Text(
-                              'Choose Date',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          )
+                    AdaptiveFlatButton(
+                      'Choose Date',
+                      _presentDatePicker,
+                    ),
                   ],
                 ),
               ),
